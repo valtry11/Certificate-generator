@@ -1,0 +1,306 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 30px 15px;
+    background: #f1f3f6;
+    color: #222;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+}
+
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    margin: 0 0 8px;
+    font-size: 34px;
+}
+
+.header p {
+    margin: 0;
+    color: #666;
+    font-size: 16px;
+}
+
+
+.section {
+    background: white;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+}
+
+.section h2 {
+    margin-top: 0;
+    margin-bottom: 18px;
+    font-size: 20px;
+}
+
+
+.upload-box {
+    border: 2px dashed #aaa;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+
+    transition: 0.2s;
+}
+
+.upload-box:hover {
+    border-color: #007bff;
+    background: #f7fbff;
+}
+
+.upload-icon {
+    font-size: 40px;
+}
+
+.upload-box strong {
+    font-size: 18px;
+}
+
+.upload-box small {
+    color: #777;
+}
+
+
+.upload-box input {
+    display: none;
+}
+
+#selectedFile {
+    text-align: center;
+    color: #555;
+    font-size: 14px;
+    margin-top: 12px;
+}
+
+
+.instruction {
+    color: #666;
+    margin-top: -5px;
+    margin-bottom: 15px;
+}
+
+#previewContainer {
+    position: relative;
+    width: 100%;
+    min-height: 250px;
+    background: #eee;
+    border-radius: 8px;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#previewCanvas {
+    display: none;
+    max-width: 100%;
+    height: auto;
+    cursor: crosshair;
+}
+
+#emptyPreview {
+    color: #888;
+    padding: 50px;
+    text-align: center;
+}
+
+.position-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 15px;
+    color: #555;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+textarea,
+select,
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+textarea {
+    resize: vertical;
+    line-height: 1.5;
+}
+
+textarea:focus,
+select:focus,
+input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.help-text {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+
+
+.settings-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 100px;
+    gap: 15px;
+}
+
+.setting input[type="color"] {
+    width: 100%;
+    height: 45px;
+    padding: 3px;
+    cursor: pointer;
+}
+
+.generate-section {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    border: none;
+    border-radius: 7px;
+    padding: 14px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#generateBtn {
+    flex: 1;
+    background: #007bff;
+    color: white;
+}
+
+#generateBtn:hover {
+    background: #0056b3;
+}
+
+.secondary-btn {
+    background: #e9ecef;
+    color: #333;
+}
+
+.secondary-btn:hover {
+    background: #d6d9dc;
+}
+
+.results-actions {
+    margin-bottom: 20px;
+}
+
+#downloadAllBtn {
+    background: #6f42c1;
+    color: white;
+}
+
+#downloadAllBtn:hover {
+    background: #59339d;
+}
+
+#results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.result-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fafafa;
+}
+
+.result-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.result-info {
+    padding: 12px;
+}
+
+.result-name {
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.reference-number {
+    color: #666;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.download-btn {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background: #28a745;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.download-btn:hover {
+    background: #218838;
+}
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px 10px;
+    }
+
+    .section {
+        padding: 18px;
+    }
+
+    .header h1 {
+        font-size: 27px;
+    }
+
+    .settings-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .generate-section {
+        flex-direction: column;
+    }
+
+}
