@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Certificate Generator</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="header">
+            <h1>Certificate Generator</h1>
+            <p>Create personalized certificates easily</p>
+        </div>
+
+
+
+        <div class="section">
+
+            <h2>1. Upload Certificate</h2>
+
+            <label for="templateUpload" class="upload-box">
+
+                <span class="upload-icon">📄</span>
+
+                <strong>Choose Certificate Design</strong>
+
+                <small>
+                    PNG, JPG, or JPEG
+                </small>
+
+                <input
+                    type="file"
+                    id="templateUpload"
+                    accept="image/png, image/jpeg"
+                >
+
+            </label>
+
+            <p id="selectedFile">
+                No file selected
+            </p>
+
+        </div>
+
+
+        <div class="section">
+
+            <h2>2. Position the Name</h2>
+
+            <p class="instruction">
+                Click or drag on the certificate to choose where the name should appear.
+            </p>
+
+            <div id="previewContainer">
+
+                <canvas id="previewCanvas"></canvas>
+
+                <div id="emptyPreview">
+                    Upload a certificate to preview it here.
+                </div>
+
+            </div>
+
+            <div class="position-info">
+
+                <span>
+                    X:
+                    <strong id="positionX">-</strong>
+                </span>
+
+                <span>
+                    Y:
+                    <strong id="positionY">-</strong>
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="section">
+
+            <h2>3. Enter Names</h2>
+
+            <label for="nameInput">
+                Enter one name per line:
+            </label>
+
+            <textarea
+                id="nameInput"
+                rows="6"
+                placeholder="John Doe&#10;Jane Smith&#10;Peter Johnson"
+            ></textarea>
+
+            <p class="help-text">
+                Each line will create a separate certificate.
+            </p>
+
+        </div>
+
+
+
+        <div class="section">
+
+            <h2>4. Name Settings</h2>
+
+            <div class="settings-grid">
+
+                <div class="setting">
+
+                    <label for="fontSelect">
+                        Font
+                    </label>
+
+                    <select id="fontSelect">
+
+                        <option value="Arial">Arial</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="Verdana">Verdana</option>
+                        <option value="Courier New">Courier New</option>
+                        <option value="Trebuchet MS">Trebuchet MS</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="setting">
+
+                    <label for="fontSize">
+                        Font Size
+                    </label>
+
+                    <input
+                        type="number"
+                        id="fontSize"
+                        value="50"
+                        min="10"
+                        max="200"
+                    >
+
+                </div>
+
+
+                <div class="setting">
+
+                    <label for="fontColor">
+                        Font Color
+                    </label>
+
+                    <input
+                        type="color"
+                        id="fontColor"
+                        value="#000000"
+                    >
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="section generate-section">
+
+            <button id="generateBtn">
+                Generate Certificates
+            </button>
+
+            <button
+                id="clearBtn"
+                class="secondary-btn"
+            >
+                Clear Results
+            </button>
+
+        </div>
+
+
+
+        <div
+            class="section"
+            id="resultsSection"
+            style="display: none;"
+        >
+
+            <h2>Generated Certificates</h2>
+
+            <div class="results-actions">
+
+                <button id="downloadAllBtn">
+                    Download All Certificates
+                </button>
+
+            </div>
+
+            <div id="results"></div>
+
+        </div>
+
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
