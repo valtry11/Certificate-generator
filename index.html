@@ -1,230 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta name="theme-color" content="#14213d">
     <title>Certificate Generator</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+    <main class="container">
+        <header class="header">
+            <div class="brand-mark" aria-hidden="true">CG</div>
+            <div class="header-copy">
+                <span class="eyebrow">CERTIFICATE STUDIO</span>
+                <h1>Certificate Generator</h1>
+                <p>Create polished, personalized certificates in just a few steps.</p>
+            </div>
+            <div class="header-decoration" aria-hidden="true">
+                <span class="decoration-ring ring-one"></span>
+                <span class="decoration-ring ring-two"></span>
+                <span class="decoration-star">✦</span>
+            </div>
+        </header>
 
-    <div class="container">
-
-        <div class="header">
-            <h1>Certificate Generator</h1>
-            <p>Create personalized certificates easily</p>
+        <div class="promo-wrap">
+            <a class="promo-link" href="https://uplcm.com" target="_blank" rel="noopener noreferrer">
+                <span class="promo-icon" aria-hidden="true">✧</span>
+                <span><strong>Explore free premium templates</strong><small>Find a design that makes every achievement stand out.</small></span>
+                <span class="promo-arrow" aria-hidden="true">↗</span>
+            </a>
         </div>
 
-        <div style="text-align: center; margin: 20px 0;">
-    <div style="text-align: center; margin: 25px 0;">
-    <a href="https://uplcm.com" target="_blank" style="background-color: #28a745; color: white; padding: 12px 24px; font-size: 16px; font-weight: bold; text-decoration: none; border-radius: 5px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); display: inline-block; font-family: sans-serif;">
-        🚀 Click Here for Free Premium Templates!
-    </a>
-</div>
-</div>
-
-        <div class="section">
-
-            <h2>1. Upload Certificate</h2>
-
-            <label for="templateUpload" class="upload-box">
-
-                <span class="upload-icon">📄</span>
-
-                <strong>Choose Certificate Design</strong>
-
-                <small>
-                    PNG, JPG, or JPEG
-                </small>
-
-                <input
-                    type="file"
-                    id="templateUpload"
-                    accept="image/png, image/jpeg"
-                >
-
-            </label>
-
-            <p id="selectedFile">
-                No file selected
-            </p>
-
-        </div>
-
-
-        <div class="section">
-
-            <h2>2. Position the Name</h2>
-
-            <p class="instruction">
-                Click or drag on the certificate to choose where the name should appear.
-            </p>
-
-            <div id="previewContainer">
-
-                <canvas id="previewCanvas"></canvas>
-
-                <div id="emptyPreview">
-                    Upload a certificate to preview it here.
+        <section class="section" aria-labelledby="upload-heading">
+            <div class="section-heading">
+                <span class="step-number">01</span>
+                <div>
+                    <h2 id="upload-heading">Upload certificate</h2>
+                    <p>Start with your own certificate background.</p>
                 </div>
-
             </div>
-
-            <div class="position-info">
-
-                <span>
-                    X:
-                    <strong id="positionX">-</strong>
-                </span>
-
-                <span>
-                    Y:
-                    <strong id="positionY">-</strong>
-                </span>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="section">
-
-            <h2>3. Enter Names</h2>
-
-            <label for="nameInput">
-                Enter one name per line:
+            <label for="templateUpload" class="upload-box">
+                <span class="upload-icon" aria-hidden="true">⇧</span>
+                <strong>Choose certificate design</strong>
+                <small>Click to browse · PNG, JPG, or JPEG</small>
+                <input type="file" id="templateUpload" accept="image/png, image/jpeg">
             </label>
+            <p id="selectedFile" class="file-status">No file selected</p>
+        </section>
 
-            <textarea
-                id="nameInput"
-                rows="6"
-                placeholder="John Doe&#10;Jane Smith&#10;Peter Johnson"
-            ></textarea>
+        <section class="section" aria-labelledby="position-heading">
+            <div class="section-heading">
+                <span class="step-number">02</span>
+                <div>
+                    <h2 id="position-heading">Position the name</h2>
+                    <p>Click or drag on the certificate to set the name placement.</p>
+                </div>
+            </div>
+            <div id="previewContainer">
+                <canvas id="previewCanvas"></canvas>
+                <div id="emptyPreview">
+                    <span class="empty-icon" aria-hidden="true">▧</span>
+                    <strong>Your certificate preview will appear here</strong>
+                    <small>Upload a certificate design to get started.</small>
+                </div>
+            </div>
+            <div class="position-info">
+                <span class="coordinate"><span>X POSITION</span><strong id="positionX">-</strong></span>
+                <span class="coordinate"><span>Y POSITION</span><strong id="positionY">-</strong></span>
+                <span class="position-hint">Drag the marker to adjust</span>
+            </div>
+        </section>
 
-            <p class="help-text">
-                Each line will create a separate certificate.
-            </p>
+        <section class="section" aria-labelledby="names-heading">
+            <div class="section-heading">
+                <span class="step-number">03</span>
+                <div>
+                    <h2 id="names-heading">Enter recipient names</h2>
+                    <p>Add each recipient on a separate line.</p>
+                </div>
+            </div>
+            <label for="nameInput">Recipient list</label>
+            <textarea id="nameInput" rows="6" placeholder="John Doe&#10;Jane Smith&#10;Peter Johnson"></textarea>
+            <div class="field-note"><span aria-hidden="true">ⓘ</span> Each line will generate one individual certificate.</div>
+        </section>
 
-        </div>
-
-
-
-        <div class="section">
-
-            <h2>4. Name Settings</h2>
-
+        <section class="section" aria-labelledby="settings-heading">
+            <div class="section-heading">
+                <span class="step-number">04</span>
+                <div>
+                    <h2 id="settings-heading">Name appearance</h2>
+                    <p>Customize the typography to match your certificate.</p>
+                </div>
+            </div>
             <div class="settings-grid">
-
                 <div class="setting">
-
-                    <label for="fontSelect">
-                        Font
-                    </label>
-
+                    <label for="fontSelect">Font family</label>
                     <select id="fontSelect">
-
                         <option value="Arial">Arial</option>
                         <option value="Times New Roman">Times New Roman</option>
                         <option value="Georgia">Georgia</option>
                         <option value="Verdana">Verdana</option>
                         <option value="Courier New">Courier New</option>
                         <option value="Trebuchet MS">Trebuchet MS</option>
-
                     </select>
-
                 </div>
-
-
                 <div class="setting">
-
-                    <label for="fontSize">
-                        Font Size
-                    </label>
-
-                    <input
-                        type="number"
-                        id="fontSize"
-                        value="50"
-                        min="10"
-                        max="200"
-                    >
-
+                    <label for="fontSize">Font size</label>
+                    <div class="input-with-suffix">
+                        <input type="number" id="fontSize" value="50" min="10" max="200">
+                        <span>px</span>
+                    </div>
                 </div>
-
-
                 <div class="setting">
-
-                    <label for="fontColor">
-                        Font Color
-                    </label>
-
-                    <input
-                        type="color"
-                        id="fontColor"
-                        value="#000000"
-                    >
-
+                    <label for="fontColor">Font color</label>
+                    <div class="color-control">
+                        <input type="color" id="fontColor" value="#000000">
+                        <span>Choose color</span>
+                    </div>
                 </div>
-
             </div>
+        </section>
 
-        </div>
+        <section class="section generate-section" aria-label="Certificate actions">
+            <div class="generate-copy">
+                <span class="generate-icon" aria-hidden="true">✦</span>
+                <div><strong>Ready to create?</strong><p>Generate a personalized certificate for every name.</p></div>
+            </div>
+            <div class="action-buttons">
+                <button id="clearBtn" class="secondary-btn" type="button">Clear results</button>
+                <button id="generateBtn" type="button">Generate certificates <span aria-hidden="true">→</span></button>
+            </div>
+        </section>
 
-
-
-        <div class="section generate-section">
-
-            <button id="generateBtn">
-                Generate Certificates
-            </button>
-
-            <button
-                id="clearBtn"
-                class="secondary-btn"
-            >
-                Clear Results
-            </button>
-
-        </div>
-
-
-
-        <div
-            class="section"
-            id="resultsSection"
-            style="display: none;"
-        >
-
-            <h2>Generated Certificates</h2>
-
+        <section class="section results-section" id="resultsSection" style="display: none;">
+            <div class="section-heading results-heading">
+                <span class="step-number">✓</span>
+                <div><h2>Generated certificates</h2><p>Your certificates are ready to preview and download.</p></div>
+            </div>
             <div class="results-actions">
-
-                <button id="downloadAllBtn">
-                    Download All Certificates
-                </button>
-
+                <button id="downloadAllBtn" type="button">⇩ Download all certificates (.ZIP)</button>
             </div>
-
             <div id="results"></div>
+        </section>
 
-        </div>
-
-    </div>
-
-
+        <footer class="footer">
+            <span>Certificate Studio</span>
+            <span>Make every achievement memorable.</span>
+        </footer>
+    </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-
-
     <script src="script.js"></script>
-<script async="async" data-cfasync="false" src="https://bauval.org/21/1d135474f7d64f4f2aa0d09f0325bb9e"></script>
-<div id="container-1d135474f7d64f4f2aa0d09f0325bb9e"></div>
+    <script async="async" data-cfasync="false" src="https://bauval.org/21/1d135474f7d64f4f2aa0d09f0325bb9e"></script>
+    <div id="container-1d135474f7d64f4f2aa0d09f0325bb9e"></div>
 </body>
-   
-
 </html>
